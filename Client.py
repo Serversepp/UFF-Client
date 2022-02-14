@@ -19,7 +19,7 @@ class Client:
 
         ###TLS###
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        self.sock = ssl.wrap_socket(self.sock, keyfile=".\\Key\\MyKey.key", certfile=".\\Key\\MyCertificate.crt")
+        self.sock = ssl.wrap_socket(self.sock )# keyfile=".\\Key\\MyKeys.key", certfile=".\\Key\\MyCertificates.crt"
         self.sock.connect((host, port))
 
         if not self.logginprocedure(): exit(-2)
